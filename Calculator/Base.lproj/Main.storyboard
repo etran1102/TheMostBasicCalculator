@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,263 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="htd-1L-gVA">
+                                <rect key="frame" x="16" y="28" width="343" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kc3-gG-ag3">
+                                        <rect key="frame" x="8" y="8" width="327" height="49"/>
+                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92784343274111669" green="0.92784343274111669" blue="0.92784343274111669" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kc3-gG-ag3" secondAttribute="trailing" constant="8" id="5vo-dC-Z3x"/>
+                                    <constraint firstAttribute="height" constant="65" id="80Z-3L-kgW"/>
+                                    <constraint firstItem="kc3-gG-ag3" firstAttribute="top" secondItem="htd-1L-gVA" secondAttribute="top" constant="8" id="8OM-4U-IGT"/>
+                                    <constraint firstItem="kc3-gG-ag3" firstAttribute="leading" secondItem="htd-1L-gVA" secondAttribute="leading" constant="8" id="cyQ-2T-AIU"/>
+                                    <constraint firstAttribute="bottom" secondItem="kc3-gG-ag3" secondAttribute="bottom" constant="8" id="pfi-Mc-dE3"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wOh-3B-FIg">
+                                <rect key="frame" x="0.0" y="111" width="375" height="556"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="OZM-L8-wXb">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="556"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="bottom" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="cKJ-nT-kdY">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="107"/>
+                                                <subviews>
+                                                    <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nM0-HH-ee4">
+                                                        <rect key="frame" x="0.0" y="12" width="250" height="95"/>
+                                                        <color key="backgroundColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="AC">
+                                                            <color key="titleColor" red="0.054439928129524695" green="0.27200303399659265" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="acBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z11-CY-tE7"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QT-du-m7D">
+                                                        <rect key="frame" x="255" y="12" width="120" height="95"/>
+                                                        <color key="backgroundColor" red="0.87656568573211047" green="0.18804132199572302" blue="0.15911779421282377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="/">
+                                                            <color key="titleColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="divideBtnPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KCM-zd-lKV"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="23J-v1-RxT">
+                                                <rect key="frame" x="0.0" y="112" width="375" height="107.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3p-o7-IDN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="107.5"/>
+                                                        <color key="backgroundColor" red="0.4971305728" green="0.48999035359999998" blue="0.4985517263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="7">
+                                                            <color key="titleColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lzk-YO-lW5"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DES-jx-yce">
+                                                        <rect key="frame" x="95" y="0.0" width="90" height="107.5"/>
+                                                        <color key="backgroundColor" red="0.4971305728" green="0.48999035359999998" blue="0.4985517263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="8">
+                                                            <color key="titleColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vOu-bs-BhH"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ji-kU-4Kh">
+                                                        <rect key="frame" x="190" y="0.0" width="90" height="107.5"/>
+                                                        <color key="backgroundColor" red="0.4971305728" green="0.48999035359999998" blue="0.4985517263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="9">
+                                                            <color key="titleColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6uM-rj-fnA"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FvV-jQ-RAM">
+                                                        <rect key="frame" x="285" y="0.0" width="90" height="107.5"/>
+                                                        <color key="backgroundColor" red="0.87656568573211047" green="0.18804132199572302" blue="0.15911779421282377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="x">
+                                                            <color key="titleColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="multiplyBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aib-oD-ThB"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IQf-zh-RmQ">
+                                                <rect key="frame" x="0.0" y="224.5" width="375" height="107"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZk-QK-Cde">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="107"/>
+                                                        <color key="backgroundColor" red="0.4971305728" green="0.48999035359999998" blue="0.4985517263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="4">
+                                                            <color key="titleColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Ql-C7-lx6"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFa-Qh-1Uq">
+                                                        <rect key="frame" x="95" y="0.0" width="90" height="107"/>
+                                                        <color key="backgroundColor" red="0.4971305728" green="0.48999035359999998" blue="0.4985517263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="5">
+                                                            <color key="titleColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Vo-oJ-yI0"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebY-Do-DVr">
+                                                        <rect key="frame" x="190" y="0.0" width="90" height="107"/>
+                                                        <color key="backgroundColor" red="0.4971305728" green="0.48999035359999998" blue="0.4985517263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="6">
+                                                            <color key="titleColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q4v-g9-E0r"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TdF-z9-IXX">
+                                                        <rect key="frame" x="285" y="0.0" width="90" height="107"/>
+                                                        <color key="backgroundColor" red="0.87656568573211047" green="0.18804132199572302" blue="0.15911779421282377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="-">
+                                                            <color key="titleColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="subtractBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AVk-3x-IEd"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="iBc-pX-LKo">
+                                                <rect key="frame" x="0.0" y="336.5" width="375" height="107.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36o-6a-ZlY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="107.5"/>
+                                                        <color key="backgroundColor" red="0.4971305728" green="0.48999035359999998" blue="0.4985517263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="1">
+                                                            <color key="titleColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ljC-38-sad"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZU-xu-U5a">
+                                                        <rect key="frame" x="95" y="0.0" width="90" height="107.5"/>
+                                                        <color key="backgroundColor" red="0.4971305728" green="0.48999035359999998" blue="0.4985517263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="2">
+                                                            <color key="titleColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s6p-xc-CIY"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVi-20-6FG">
+                                                        <rect key="frame" x="190" y="0.0" width="90" height="107.5"/>
+                                                        <color key="backgroundColor" red="0.4971305728" green="0.48999035359999998" blue="0.4985517263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="3">
+                                                            <color key="titleColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1QC-Mx-VaV"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkf-Zj-tok">
+                                                        <rect key="frame" x="285" y="0.0" width="90" height="107.5"/>
+                                                        <color key="backgroundColor" red="0.87656568573211047" green="0.18804132199572302" blue="0.15911779421282377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="+">
+                                                            <color key="titleColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="addBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XOf-aZ-cfi"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7J1-xC-CcI">
+                                                <rect key="frame" x="0.0" y="449" width="375" height="107"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czP-hk-LCo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="185" height="95"/>
+                                                        <color key="backgroundColor" red="0.4971305728" green="0.48999035359999998" blue="0.4985517263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="0">
+                                                            <color key="titleColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="numberPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UAf-oA-ZTe"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahY-BJ-atI">
+                                                        <rect key="frame" x="190" y="0.0" width="185" height="95"/>
+                                                        <color key="backgroundColor" red="0.22000859669551165" green="0.29258668179328945" blue="0.87656568573211047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <fontDescription key="fontDescription" name="Kailasa" family="Kailasa" pointSize="50"/>
+                                                        <state key="normal" title="=">
+                                                            <color key="titleColor" red="1" green="0.99207716297948723" blue="0.99105072201655731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="equalBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="D2H-Dj-Tjf"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.76175840736040612" green="0.76175840736040612" blue="0.76175840736040612" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="OZM-L8-wXb" firstAttribute="top" secondItem="wOh-3B-FIg" secondAttribute="top" id="8Wv-71-l5c"/>
+                                    <constraint firstAttribute="bottom" secondItem="OZM-L8-wXb" secondAttribute="bottom" id="AKo-1D-14B"/>
+                                    <constraint firstItem="OZM-L8-wXb" firstAttribute="leading" secondItem="wOh-3B-FIg" secondAttribute="leading" id="WEr-av-zv6"/>
+                                    <constraint firstAttribute="trailing" secondItem="OZM-L8-wXb" secondAttribute="trailing" id="tv3-PH-3RK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25337166003243472" green="0.25364937901983542" blue="0.26376110406091369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wOh-3B-FIg" firstAttribute="top" secondItem="htd-1L-gVA" secondAttribute="bottom" constant="18" id="3Tf-0I-1wz"/>
+                            <constraint firstItem="htd-1L-gVA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Y8O-G9-KGx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wOh-3B-FIg" secondAttribute="bottom" id="clO-Bw-a70"/>
+                            <constraint firstItem="htd-1L-gVA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="gTr-XF-tZh"/>
+                            <constraint firstItem="wOh-3B-FIg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="htp-RQ-HSc"/>
+                            <constraint firstAttribute="trailing" secondItem="wOh-3B-FIg" secondAttribute="trailing" id="jb4-oa-aWV"/>
+                            <constraint firstItem="htd-1L-gVA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lYc-fe-7Oi"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="outputLbl" destination="kc3-gG-ag3" id="PDM-82-p0r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="116" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>
